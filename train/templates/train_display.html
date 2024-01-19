@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block title %} All Trains List {% endblock title %}
+{% block content %}
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-md-3">
+      <h3 class="text-center mb-3">Destination Station</h3>
+      <div class="list-group">
+        <a
+          href="{% url 'train_list' %}"
+          class="list-group-item list-group-item-action text-center"
+        >
+          All Trains
+        </a>
+        {% for station in station_list %}
+        <a
+          href="{% url 'train_list_by_category' station.slug %}"
+          class="list-group-item list-group-item-action text-center"
+        >
+          {{ station.name }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        {% for train in trains %}
+        <div class="col-sm-6 col-lg-3 col-md-4">
+          <div class="card m-2 h-100">
+            <div class="card-body d-flex align-items-center">
+              <div class="mx-auto">
+                <h4 class="card-title pt-2 text-center">
+                  <a href="" class="text-decoration-none text-dark">
+                    {{ train.name }}
+                  </a>
+                </h4>
+
+                <p class="text-center">
+                  <b>Ticket Price : {{ train.ticket_price }}$</b>
+                </p>
+                <p class="text-center">
+                  <b>Destination Station : {{ train.station }}$</b>
+                </p>
+                <p class="text-center">Departure : {{ train.departure }}$</p>
+                <div class="text-center">
+                  <a
+                    class="btn btn-primary text-white text-center"
+                    href="{% url 'train_details' train.id %}"
+                  >
+                    See Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

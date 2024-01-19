@@ -1,0 +1,35 @@
+<!-- user_profile.html -->
+
+{% extends "base.html" %} {% block title %}User Profile{% endblock title %}
+{%block content %} {% load tz %}
+<div class="container">
+  <h2 class="my-4">Your Ticket Bookings</h2>
+  {% if bookings %}
+  <ul>
+    <table class="table mt-5 text-center">
+      <thead>
+        <tr>
+          <th scope="col">Train Name</th>
+          <th scope="col">Ticket Price</th>
+          <th scope="col">Booking Time</th>
+          <th scope="col">Seat No</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for booking in bookings %}
+        <tr>
+          <td class="align-middle">{{ booking.train.name }}</td>
+          <td class="align-middle">{{ booking.train.ticket_price }}</td>
+          <td class="align-middle">{{ booking.time}}</td>
+          <td class="align-middle">{{ booking.seat}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </ul>
+
+  {% else %}
+  <p>You haven't booked any ticket yet.</p>
+  {% endif %}
+</div>
+{% endblock %}
