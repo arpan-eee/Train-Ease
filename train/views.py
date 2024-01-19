@@ -27,9 +27,9 @@ class TrainDisplay(ListView):
 def details(request,id):
     train = Train.objects.get(pk=id)
     review = Review.objects.filter(train = train)
-    if request.user.is_authenticated():
+    try:
         btn = Booking.objects.filter(train = train,user = request.user).exists()
-    else:
+    except:
         btn = False
 
     return render(request,'details.html',{'train' : train,'comments': review,'btn' : btn})
