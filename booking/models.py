@@ -1,5 +1,5 @@
 from django.db import models
-from train.models import Seat,Train
+from train.models import Train,TrainSeat
 from django.contrib.auth.models import User
 
 
@@ -7,12 +7,12 @@ from django.contrib.auth.models import User
 
 class Booking(models.Model):
     train = models.ForeignKey(Train, on_delete=models.CASCADE,null=True, blank=True)
-    seat = models.ForeignKey(Seat, on_delete=models.CASCADE,null=True, blank=True)
+    seat = models.ForeignKey(TrainSeat, on_delete=models.CASCADE,null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Booking for {self.train.name} by {self.user.username} at {self.time}"
+        return f"Booking for {self.seat.train.name} by {self.user.username} at {self.time}"
     
 class Deposit(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

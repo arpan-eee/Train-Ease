@@ -1,29 +1,44 @@
 {% extends "base.html" %} {% block title %} All Trains List {% endblock title %}
 {% block content %}
 <div class="container-fluid mt-5">
-  <div class="row">
-    <div class="col-md-3">
-      <h3 class="text-center mb-3">Destination Station</h3>
-      <div class="list-group">
+  <div class="dropdown text-center mb-4">
+    <div class="col-md-12">
+      <h3 class="list-group">
         <a
           href="{% url 'train_list' %}"
           class="list-group-item list-group-item-action text-center"
         >
-          All Trains
+          Show All Trains
         </a>
-        {% for station in station_list %}
-        <a
-          href="{% url 'train_list_by_category' station.slug %}"
-          class="list-group-item list-group-item-action text-center"
-        >
-          {{ station.name }}
-        </a>
-        {% endfor %}
-      </div>
+      </h3>
     </div>
-    <div class="col-md-9">
+    <h5 class="text-center my-3">Search By Station</h5>
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Choose Station
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      {% for station in station_list %}
+      <a
+        class="dropdown-item"
+        href="{% url 'train_list_by_category' station.slug %}"
+      >
+        {{ station.name }}
+      </a>
+
+      {% endfor %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
       <div class="row">
-        {% for train in trains %}
+        {% if trains %} {% for train in trains %}
         <div class="col-sm-6 col-lg-3 col-md-4">
           <div class="card m-2 h-100">
             <div class="card-body d-flex align-items-center">
@@ -35,12 +50,14 @@
                 </h4>
 
                 <p class="text-center">
-                  <b>Ticket Price : {{ train.ticket_price }}$</b>
+                  From
+                  <b>{{ train.from_station }}</b>
+                  To
+                  <b>{{ train.to_station }}</b>
                 </p>
                 <p class="text-center">
-                  <b>Destination Station : {{ train.station }}</b>
+                  Departure : {{ train.departure | time:"h:i a" }}
                 </p>
-                <p class="text-center">Departure : {{ train.departure }}</p>
                 <div class="text-center">
                   <a
                     class="btn btn-primary text-white text-center"
@@ -54,7 +71,9 @@
           </div>
         </div>
 
-        {% endfor %}
+        {% endfor %} {% else %}
+        <h2 class="text-center">No Results Found</h2>
+        {% endif %}
       </div>
     </div>
   </div>

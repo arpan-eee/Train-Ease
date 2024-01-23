@@ -18,8 +18,8 @@
       <tbody>
         {% for booking in bookings %}
         <tr>
-          <td class="align-middle">{{ booking.train.name }}</td>
-          <td class="align-middle">{{ booking.train.ticket_price }}</td>
+          <td class="align-middle">{{ booking.seat.train.name }}</td>
+          <td class="align-middle">{{ booking.seat.train.ticket_price }}</td>
           <td class="align-middle">{{ booking.time}}</td>
           <td class="align-middle">{{ booking.seat}}</td>
         </tr>

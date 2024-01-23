@@ -4,13 +4,17 @@
   <div class="row my-5">
     <div class="col-lg-9 col-sm-12 mx-auto">
       <h2 class="text-center">{{train.name}}</h2>
-      <h4 class="text-center">Ticket Price : {{train.ticket_price}}</h4>
-      <p class="text-center"><b>Destination Station : {{train.station}}</b></p>
-      <p class="text-center">Departure : {{train.departure}}</p>
+      <p class="text-center">
+        From
+        <b>{{ train.from_station }}</b>
+        To
+        <b>{{ train.to_station }}</b>
+      </p>
+      <p class="text-center">
+        Departure : {{ train.departure | time:"h:i a" }}
+      </p>
       {% if request.user.is_authenticated %}
-      <a href="{% url 'booking' train.id %}" class="btn btn-primary w-100">
-        Book Now
-      </a>
+      <a href="{% url 'booking'%}" class="btn btn-primary w-100">Book Now</a>
       {% endif %}
     </div>
   </div>
