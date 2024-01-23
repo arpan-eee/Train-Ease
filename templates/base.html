@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -16,6 +17,21 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <style>
+      body {
+        background-color: #7d7f80;
+      }
+      .footer-dark {
+        background-color: #343a40;
+        color: #ffffff;
+        padding: 20px 0;
+      }
+
+      .footer-dark img {
+        height: 30px;
+        margin-right: 10px;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -114,6 +130,126 @@
     {% for m in messages %}
     <h3 class="bg-{{m.tags}} text-white text-center p-2">{{m}}</h3>
     {% endfor %} {% block content %}{% endblock content %}
+
+    <footer class="bg-dark footer-dark text-light text-center py-5 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Useful Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a class="nav-link text-white" href="{% url 'train_list' %}">
+                  All Trains
+                </a>
+              </li>
+              <li>
+                <a class="nav-link text-white" href="{% url 'search' %}">
+                  Search Train
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="col-md-4">
+            <h5>Contact</h5>
+            <p>
+              Address:
+              <br />
+              1234 Random Street
+              <br />
+              Cityville, Statehood 56789
+              <br />
+              Countryland
+              <br />
+              <br />
+
+              Phone Number:
+              <br />
+              +1 (555) 123-4567
+              <br />
+
+              Email:
+              <br />
+              randomuser@example.com
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <img
+              src="{% static 'train_logo.png' %}"
+              alt="Train Logo"
+              height="30"
+              class="mr-2"
+            />
+            <h4 class="">Train Ease</h4>
+
+            <br />
+            <a
+              class="text-decoration-none"
+              href="https://facebook.com"
+              target="_blank"
+            >
+              <img
+                src="{% static 'facebook.png' %}"
+                alt="Facebook Logo"
+                class="ml-2"
+                height="20"
+              />
+            </a>
+            <a
+              class="text-decoration-none"
+              href="https://instagram.com"
+              target="_blank"
+            >
+              <img
+                src="{% static 'instagram.png' %}"
+                alt="Instagram Logo"
+                class="ml-2"
+                height="20"
+              />
+            </a>
+            <a
+              class="text-decoration-none"
+              href="https://github.com"
+              target="_blank"
+            >
+              <img
+                src="{% static 'github.png' %}"
+                alt="GitHub Logo"
+                class="ml-2"
+                height="20"
+              />
+            </a>
+            <a
+              class="text-decoration-none"
+              href="https://linkedin.com"
+              target="_blank"
+            >
+              <img
+                src="{% static 'linkedin.png' %}"
+                alt="LinkedIn Logo"
+                class="ml-2"
+                height="20"
+              />
+            </a>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-2">Owner: Arpan Chakraborty &copy; {% now "Y" %}</p>
+      </div>
+    </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
