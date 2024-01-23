@@ -11,6 +11,10 @@
         <b>{{ train.to_station }}</b>
       </p>
       <p class="text-center">
+        Ticket Price :
+        <b>{{train.ticket_price}}</b>
+      </p>
+      <p class="text-center">
         Departure : {{ train.departure | time:"h:i a" }}
       </p>
       {% if request.user.is_authenticated %}

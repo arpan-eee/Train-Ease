@@ -22,7 +22,7 @@ class Seat(models.Model):
     seat_number = models.IntegerField()
 
     def __str__(self):
-        return f"Seat {self.seat_number}"
+        return f"{self.seat_number}"
     
 class Station(models.Model):
     name = models.CharField(max_length=100)
@@ -54,7 +54,7 @@ class TrainSeat(models.Model):
 
     def __str__(self):
         seat_status_str = "Not Available" if self.is_booked else "Available"
-        return f"{self.train}  |  {self.compartment}  |  {self.seat}  |  {seat_status_str}"
+        return f"{self.train}  |  {self.compartment}  -  {self.seat}  | Price : {self.train.ticket_price} |  {seat_status_str}"
     
 # class TrainFare(models.Model):
 #     train = models.ForeignKey(Train, blank=True, null=True,on_delete=models.CASCADE)
