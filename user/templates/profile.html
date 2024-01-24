@@ -21,7 +21,9 @@
           <td class="align-middle">{{ booking.seat.train.name }}</td>
           <td class="align-middle">{{ booking.seat.train.ticket_price }}</td>
           <td class="align-middle">{{ booking.time}}</td>
-          <td class="align-middle">{{ booking.seat}}</td>
+          <td class="align-middle">
+            {{ booking.seat.compartment}} {{ booking.seat.seat}}
+          </td>
         </tr>
         {% endfor %}
       </tbody>
