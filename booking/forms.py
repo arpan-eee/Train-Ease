@@ -11,4 +11,5 @@ class DepositForm(forms.Form):
 #         fields = ['seat']
 
 class BookForm(forms.Form):
-    seat = forms.ModelChoiceField(queryset=TrainSeat.objects.all(), empty_label="Select a Seat")
+    seat = forms.ModelChoiceField(queryset=TrainSeat.objects.all(),label='Select a Seat')
+    promo = forms.CharField(max_length=20,label='Promo Code(If you have any)',required=False)

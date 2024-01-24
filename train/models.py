@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.forms import TimeInput
 from django.utils.text import slugify
+from django.core.validators import MaxValueValidator
 
 STAR_CHOICES = [
         ('⭐', '⭐'),
@@ -70,3 +71,11 @@ class Review(models.Model):
 
     def __str__(self):
         return f"Review by {self.user.username} for {self.train.name}"
+    
+class Promo(models.Model):
+    code = models.CharField(max_length=20)
+    user = models.ManyToManyField(User, blank=True, null=True)
+    amount = models.IntegerField(validators=[MaxValueValidator(limit_value=100)])
+
+    def __str__(self):
+        return f"{self.code}"
