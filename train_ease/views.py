@@ -7,5 +7,8 @@ def home(request):
         if form.is_valid():
             form.save()
     else:
-        form = ComplaintForm()
+        try:
+            form = ComplaintForm(instance=request.user)
+        except:
+            form = ComplaintForm()
     return render(request, 'home.html',{'form':form})

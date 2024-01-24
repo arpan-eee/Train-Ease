@@ -13,4 +13,6 @@ class SearchForm(forms.Form):
 class ComplaintForm(forms.ModelForm):
     class Meta:
         model = Complaint
-        fields = ['name','email','text']
+        fields = ['name', 'email', 'text']
+
+        
