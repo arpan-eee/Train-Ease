@@ -45,3 +45,7 @@ body {
   background-color: white;
   color: #bc5e00;
 }
+
+.footer {
+  position: absolute;
+}
