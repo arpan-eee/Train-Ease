@@ -2,21 +2,21 @@
 <br />
 {% load static %} {% load crispy_forms_tags %} {% block content %}
 <div class="container mt-5">
-  <div class="row">
+  <div class="row home1">
     <!-- Image on the Left Half -->
     <div class="col-md-12 col-lg-6 col-sm-12 text-center">
       <img
         src="https://media.istockphoto.com/id/1465124899/photo/amtrak-coast-starlight-train-at-sunset-time.webp?b=1&s=170667a&w=0&k=20&c=J9S4au8KlWRwCnMGyanMPlcVQMsUJ32BF0ivSS5kX4k="
-        alt="Book Haven Image"
+        alt="Train"
         class="img-fluid rounded-pill"
       />
     </div>
 
-    <div class="col-md-12 col-lg-6 col-sm-12 mt-3">
+    <div class="col-md-12 col-lg-6 col-sm-12 mt-3 home_head">
       <div class="d-flex align-items-center h-100">
-        <div class="text-white">
-          <h2>Welcome to TrainEase</h2>
-          <p class="lead">
+        <div class="">
+          <h1>Welcome to TrainEase</h1>
+          <p class="fs-5">
             Embark on stress-free train journeys with Train Ease – your
             user-friendly platform for seamless rail reservations. Enjoy the
             convenience of real-time updates, diverse options, and intuitive
@@ -29,16 +29,22 @@
     </div>
   </div>
 
-  <img
-    src="{% static '1discount.png' %}"
-    class="d-block w-100 mt-3"
-    alt="Discount"
-  />
-  <img
-    src="{% static '2discount.png' %}"
-    class="d-block w-100"
-    alt="Discount"
-  />
+  <img class="img-curve mt-5" src="{% static 'curve2.png' %}" alt="" />
+
+  <div class="discount pb-3">
+    <img
+      src="{% static '1discount.png' %}"
+      class="d-block w-100"
+      alt="Discount"
+    />
+    <img
+      src="{% static '2discount.png' %}"
+      class="d-block w-100"
+      alt="Discount"
+    />
+  </div>
+
+  <img class="img-curve mb-5" src="{% static 'curve3.png' %}" alt="" />
 
   <div class="row my-4">
     <div class="col-lg-3 col-md-6 col-sm-6 my-2">
@@ -48,7 +54,7 @@
           src="{% static '1.jpg' %}"
           alt="Card image cap"
         />
-        <div class="card-body">
+        <div class="card-body card-orng">
           <h5 class="card-title">Swift Reservations</h5>
           <p class="card-text">
             Instantly secure your train tickets hassle-free. Train Ease's Swift
@@ -65,7 +71,7 @@
           src="{% static '3.jpg' %}"
           alt="Card image cap"
         />
-        <div class="card-body">
+        <div class="card-body card-orng">
           <h5 class="card-title">Custom Routes</h5>
           <p class="card-text">
             Tailor your journey with Custom Routes. Train Ease offers
@@ -82,7 +88,7 @@
           src="{% static '4.jpg' %}"
           alt="Card image cap"
         />
-        <div class="card-body">
+        <div class="card-body card-orng">
           <h5 class="card-title">Price Watch Alerts</h5>
           <p class="card-text">
             Stay budget-savvy with Price Watch Alerts. Train Ease notifies you
@@ -99,7 +105,7 @@
           src="{% static '5.jpg' %}"
           alt="Card image cap"
         />
-        <div class="card-body">
+        <div class="card-body card-orng">
           <h5 class="card-title">Travel Concierge</h5>
           <p class="card-text">
             Elevate your experience with a dedicated Travel Concierge. Beyond
@@ -210,10 +216,12 @@
       />
     </div>
     <div class="col-lg-6 col-sm-12 my-5">
-      <h1 class="text-white text-center">Share Your Thoughts</h1>
+      <h1 class="home-form-top text-center">Share Your Thoughts</h1>
       <form method="post">
         {% csrf_token %} {{ form|crispy }}
-        <button type="submit" class="btn btn-info w-100">Submit</button>
+        <button type="submit" class="btn custom-btn-home w-100 fs-5">
+          Submit
+        </button>
       </form>
     </div>
   </div>

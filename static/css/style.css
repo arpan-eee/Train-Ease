@@ -1,0 +1,47 @@
+body {
+  background-color: #ffffff;
+}
+
+.footer-dark {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 20px 0;
+}
+
+.footer-dark img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.discount {
+  background-color: #ff8000;
+}
+
+.home1 {
+  background-color: white;
+  width: 100%;
+}
+
+.img-curve {
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.home-form-top {
+  color: #ff8000;
+}
+
+.custom-btn-home {
+  color: white;
+  background-color: #ff8000;
+}
+
+.home_head {
+  color: #bc5e00;
+}
+
+.card-orng {
+  background-color: white;
+  color: #bc5e00;
+}

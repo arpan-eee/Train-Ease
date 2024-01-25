@@ -18,25 +18,12 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <style>
-      body {
-        background-color: #7d7f80;
-      }
-      .footer-dark {
-        background-color: #343a40;
-        color: #ffffff;
-        padding: 20px 0;
-      }
-
-      .footer-dark img {
-        height: 30px;
-        margin-right: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style></style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">TrainEase</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fs-5 px-5">
+      <a class="navbar-brand" href="{% static 'home' %}"><h3>TrainEase</h3></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -132,7 +119,9 @@
     <h3 class="bg-{{m.tags}} text-white text-center p-2">{{m}}</h3>
     {% endfor %} {% block content %}{% endblock content %}
 
-    <footer class="bg-dark footer-dark text-light text-center py-5 mt-5">
+    <img class="w-100" src="{% static 'curve.png' %}" alt="" />
+
+    <footer class="bg-dark footer-dark text-light text-center pb-5">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
