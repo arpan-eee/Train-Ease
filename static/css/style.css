@@ -1,7 +1,8 @@
 footer {
   width: 100%;
   bottom: 0;
-  background: linear-gradient(to right, #00093c, #2d0b00);
+  /* background: linear-gradient(to right, #00093c, #2d0b00); */
+  background: linear-gradient(to right, #00093c, #3e1f00);
   color: #fff;
   padding: 100px 0 30px;
   border-top-left-radius: 125px;
@@ -169,6 +170,7 @@ footer underline span {
 
 .navbar {
   background-color: #00093c;
+  /* background: linear-gradient(to right, #00093c, #3e1f00); */
 }
 
 .map {
@@ -195,11 +197,18 @@ footer underline span {
 
 .formstyle2 {
   border-radius: 20px;
-  border: #031999;
+  border: #0069d9;
   border-style: solid;
   padding: 30px;
   padding-top: 60px;
   margin-top: 50px;
+}
+
+.custom_btn {
+  background-color: #00093c;
+  color: #ffffff;
+  font-size: 25px;
+  padding: 10px;
 }
 
 @media (max-width: 700px) {
