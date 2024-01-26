@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
-<div class="container">
-  <h2 class="text-center my-3">Search Train</h2>
+<div class="container formstyle2">
+  <h2 class="text-center mb-3 heading">Search Train</h2>
   <form method="post" class="comment-form">
     {% csrf_token %} {{ form | crispy }}
     <button type="submit" class="btn btn-primary w-100 fs-5">Search</button>

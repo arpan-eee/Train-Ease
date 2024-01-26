@@ -19,10 +19,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <style></style>
+    <script src="https://kit.fontawesome.com/06c1d62ffb.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fs-5 px-5">
+    <nav class="navbar navbar-expand-lg navbar-dark fs-5 px-5">
       <a class="navbar-brand" href="{% static 'home' %}"><h3>TrainEase</h3></a>
       <button
         class="navbar-toggler"
@@ -90,11 +90,6 @@
               <a class="dropdown-item" href="{% url 'password_change' %}">
                 Change Password
               </a>
-              {% comment %}
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-              {% endcomment %}
             </div>
           </li>
           <li class="nav-item">
@@ -119,125 +114,63 @@
     <h3 class="bg-{{m.tags}} text-white text-center p-2">{{m}}</h3>
     {% endfor %} {% block content %}{% endblock content %}
 
-    <img class="w-100" src="{% static 'curve.png' %}" alt="" />
+    <footer class="footer mt-5">
+      <div class="row">
+        <div class="col">
+          <img
+            class="logo my-3"
+            src="{% static 'train_logo.png' %}"
+            alt="Train Logo"
+          />
+          <p>
+            Expertly crafted Django-based train booking website: seamless
+            navigation, user-friendly design, secure transactions, and real-time
+            updates for a superior travel planning experience.
+          </p>
+        </div>
+        <div class="col">
+          <h3>Office</h3>
 
-    <footer class="bg-dark footer-dark text-light text-center pb-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h5>Useful Links</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a class="nav-link text-white" href="{% url 'train_list' %}">
-                  All Trains
-                </a>
-              </li>
-              <li>
-                <a class="nav-link text-white" href="{% url 'search' %}">
-                  Search Train
-                </a>
-              </li>
-            </ul>
-          </div>
+          <p>123 Maple Street</p>
+          <p>Apartment 45</p>
+          <p>Springfield, IL 62704</p>
+          <p>USA</p>
+          <p class="email-id">arpan.chakraborty9876@gmail.com</p>
+          <h5>+91-0123456789</h5>
+        </div>
+        <div class="col">
+          <h3 class="ms-4">Links</h3>
 
-          <!-- Contact Section -->
-          <div class="col-md-4">
-            <h5>Contact</h5>
-            <p>
-              Address:
-              <br />
-              1234 Random Street
-              <br />
-              Cityville, Statehood 56789
-              <br />
-              Countryland
-              <br />
-              <br />
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Features</a></li>
+            <li><a href="">Contacts</a></li>
+            <li><a href="">Services</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Newsletter</h3>
 
-              Phone Number:
-              <br />
-              +1 (555) 123-4567
-              <br />
-
-              Email:
-              <br />
-              randomuser@example.com
-            </p>
-          </div>
-
-          <div class="col-md-4">
-            <img
-              src="{% static 'train_logo.png' %}"
-              alt="Train Logo"
-              height="30"
-              class="mr-2"
-            />
-            <h4 class="">Train Ease</h4>
-
-            <br />
-            <a
-              class="text-decoration-none"
-              href="https://facebook.com"
-              target="_blank"
-            >
-              <img
-                src="{% static 'facebook.png' %}"
-                alt="Facebook Logo"
-                class="ml-2"
-                height="20"
-              />
+          <form action="">
+            <i class="far fa-regular fa-envelope"></i>
+            <input type="email" placeholder="Your email" required />
+            <button type="submit">
+              <i class="fas fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+          <div class="social_icons">
+            <a href="https://www.facebook.com/arpan.cborty">
+              <i class="fab fa-facebook"></i>
             </a>
-            <a
-              class="text-decoration-none"
-              href="https://instagram.com"
-              target="_blank"
-            >
-              <img
-                src="{% static 'instagram.png' %}"
-                alt="Instagram Logo"
-                class="ml-2"
-                height="20"
-              />
-            </a>
-            <a
-              class="text-decoration-none"
-              href="https://github.com"
-              target="_blank"
-            >
-              <img
-                src="{% static 'github.png' %}"
-                alt="GitHub Logo"
-                class="ml-2"
-                height="20"
-              />
-            </a>
-            <a
-              class="text-decoration-none"
-              href="https://linkedin.com"
-              target="_blank"
-            >
-              <img
-                src="{% static 'linkedin.png' %}"
-                alt="LinkedIn Logo"
-                class="ml-2"
-                height="20"
-              />
-            </a>
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-              </li>
-            </ul>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-whatsapp"></i></a>
+            <a href=""><i class="fab fa-pinterest"></i></a>
           </div>
         </div>
-        <p class="mt-2">Owner: Arpan Chakraborty &copy; {% now "Y" %}</p>
       </div>
+      <hr />
+      <p class="text-center">Arpan Chakraborty © 2024 - All Rights Reserved</p>
     </footer>
 
     <script

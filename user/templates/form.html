@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
 
-<div class="container">
+<div class="container formstyle">
   <form style="width: 80%; margin: auto" method="post">
-    <h1 class="mt-3 mb-1 text-center">{{top}}</h1>
+    <h1 class="mt-3 mb-1 text-center heading">{{top}}</h1>
     {% csrf_token %} {{form | crispy}}
 
-    <button class="btn btn-warning mb-5 mt-5 w-100"><b>{{btn}}</b></button>
+    <button class="btn custom-btn-home"><b>{{btn}}</b></button>
   </form>
 </div>
 
