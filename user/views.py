@@ -72,7 +72,7 @@ class UserLoginView(LoginView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['top'] = 'Log In Form'
+        context['top'] = 'Log In'
         context['btn'] = 'Log In'
         return context
     

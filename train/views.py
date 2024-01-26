@@ -38,7 +38,8 @@ def search(request):
     else:
         form = SearchForm()
     return render(request, 'search_train.html', {'form': form})
-    
+
+@login_required    
 def user_comment(request,id):
     train = get_object_or_404(Train, id=id)
 
@@ -64,7 +65,7 @@ def details(request,id):
 
     return render(request,'details.html',{'train' : train,'comments': review,'btn' : btn})
 
-
+@login_required
 def user_comment(request,id):
     train = get_object_or_404(Train, id=id)
 

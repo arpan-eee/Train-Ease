@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
 
-<div class="container formstyle">
+<div class="container formstyle pb-5">
   <form style="width: 80%; margin: auto" method="post">
-    <h1 class="mt-3 mb-1 text-center heading">{{top}}</h1>
+    <h1 class="mt-2 mb-1 text-center heading">{{top}}</h1>
     {% csrf_token %} {{form | crispy}}
 
     <button class="btn custom-btn-home"><b>{{btn}}</b></button>

@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from decimal import Decimal
 
 # Create your views here.
-
+@login_required
 def deposit_view(request):
     if request.method == 'POST':
         form = DepositForm(request.POST)
@@ -28,6 +28,7 @@ def deposit_view(request):
 
     return render(request, 'form.html', {'form': form, 'top': 'Deposit Form','btn': 'Deposit'})
 
+@login_required
 def TicketBooking(request):
     passenger = request.user.passenger
 
