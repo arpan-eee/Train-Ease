@@ -41,6 +41,12 @@
         {% if trains %} {% for train in trains %}
         <div class="col-sm-6 col-lg-3 col-md-4 mb-5">
           <div class="card m-2 h-100">
+            <img
+              class="card-img-top"
+              src="{{train.image.url}}"
+              alt="Train Image"
+              style="height: 10rem"
+            />
             <div class="card-body d-flex align-items-center">
               <div class="mx-auto">
                 <h4 class="card-title pt-2 text-center">
